@@ -2,7 +2,7 @@
 import Header from "./shared/Header.vue";
 import Hero from "./shared/Hero.vue";
 import HeroContentStrategic from "../data/HeroContentStrategic.ts";
-
+import DifferenceMaker from "./DifferenceMaker.vue";
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import HeroContentStrategic from "../data/HeroContentStrategic.ts";
     </div>
 
     <main>
-
+      <DifferenceMaker />
 
     </main>
   </div>
@@ -46,7 +46,8 @@ header {
 main {
   @include mixins.dflex-centered;
   flex-direction: column;
-  height: 100px;
   width: 100%;
+  gap: 60px;
 }
+
 </style>
