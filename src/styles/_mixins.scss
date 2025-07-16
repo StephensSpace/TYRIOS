@@ -1,0 +1,103 @@
+@use './_variables.scss' as vars;
+
+@mixin font-style-xlarge {
+    font-size: 48px;
+    line-height: 56px;
+}
+
+@mixin font-style-large {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+@mixin font-style-medium {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+@mixin font-style-small {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin font-style-xsmall {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+@mixin dflex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin heading-h1 {
+    @include font-style-xlarge;
+    font-weight: 600;
+    color: var(--tyrios-white);
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-block: 0;
+}
+
+@mixin hero-subtitle {
+    @include font-style-medium;
+    font-weight: 500;
+    color: var(--tyrios-medium);
+    text-align: center;
+}
+
+@mixin speaker-box {
+    @include dflex-centered;
+    border: 1px solid var(--tyrios-purple);
+    border-radius: 4px;
+    background-color: var(--tyrios-medium);
+    padding: 8px;
+    gap: 4px;
+
+    p {
+        @include font-style-small;
+        margin-block: 0;
+        font-weight: 400;
+        color: var(--tyrios-purple);
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@mixin benefits-box {
+    @include dflex-centered;
+    gap: 4px;
+
+    p {
+        @include font-style-xsmall;
+        margin: 0;
+    }
+}
+
+@mixin form-button($icon-position: right) {
+    @include dflex-centered;
+    display: inline-flex;
+    flex-direction: row;
+    height: 40px;
+    border-radius: 4px;
+    padding: 8px;
+    gap: 4px;
+    
+    background-color: var(--tyrios-purple);
+    flex-direction: if($icon-position ==left, row-reverse, row);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+
+    p {
+        @include font-style-small;
+        margin: 0;
+        width: fit-content;
+        font-weight: 500;
+        color: var(--tyrios-white);
+    }
+}
