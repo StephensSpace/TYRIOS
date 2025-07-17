@@ -5,6 +5,7 @@ import HeroContentStrategic from "../data/HeroContentStrategic.ts";
 import DifferenceMaker from "./DifferenceMaker.vue";
 import HowTo from "./HowTo.vue"
 import TestimonialComponent from "./shared/TestimonialComponent.vue";
+import FaqSection from "./shared/FaqSection.vue"
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import TestimonialComponent from "./shared/TestimonialComponent.vue";
       <DifferenceMaker />
       <HowTo />
       <TestimonialComponent />
+      <FaqSection />
 
     </main>
   </div>
