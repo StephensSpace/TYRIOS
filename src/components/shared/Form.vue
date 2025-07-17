@@ -3,12 +3,12 @@
     <!-- FIXE INPUTS IN EINER ROW -->
     <div class="input-row">
       <div class="form-group">
-        <label for="email">E-Mail</label>
+        <label for="email">Email address</label>
         <input id="email" type="email" placeholder="Deine E-Mail" v-model="email" required />
       </div>
 
       <div class="form-group">
-        <label for="website">URL deiner Website</label>
+        <label for="website">Website Url</label>
         <input id="website" type="url" placeholder="https://deine-website.de" v-model="websiteUrl" required />
       </div>
     </div>

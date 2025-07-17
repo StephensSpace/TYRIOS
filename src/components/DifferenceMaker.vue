@@ -66,29 +66,23 @@ import differenceMaker from '../data/Differencemaker';
     .difference-box {
         @include mixins.dflex-centered;
         flex-direction: column;
-        flex: 1 1 calc(50% - 24px);
         padding: 16px;
         gap: 8px;
         width: 100%;
         max-width: 318px;
-
         height: 100%;
         max-height: 220px;
-
         margin: 0 auto;
-        /* optional, um sie zu zentrieren */
         box-sizing: border-box;
-        /* falls Padding relevant ist */
 
         h6 {
             @include mixins.header06;
-
         }
 
         p {
-            margin: 0 auto;
             @include mixins.font-style-xsmall;
             text-align: center;
+            margin: 0 auto;
         }
     }
 
