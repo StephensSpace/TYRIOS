@@ -4,171 +4,53 @@
 
         <div class="faq-box">
 
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
+            <template v-for="faq in faqButtons" :key="faq.id">
+                <div class="faq-item">
+                    <button @click="toggle(faq.id)" :aria-expanded="openIds.has(faq.id)" :aria-controls="faq.id"
+                        :id="`${faq.id}-button`">
+                        <p>{{ faq.titleEN }}</p>
 
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
+                        <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask :id="`${faq.id}-mask`" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="25" height="24">
+                                <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g :mask="`url(#${faq.id}-mask)`">
+                                <path
+                                    d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
+                                    fill="#2D2C2F" />
+                            </g>
+                        </svg>
+                    </button>
+                    
 
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
+                    <div :id="faq.id" v-if="openIds.has(faq.id)" role="region" :aria-labelledby="`${faq.id}-button`"
+                        class="faq-answer">
+                        <p>{{ faq.textEN }}</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
-
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
-
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
-
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
-
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
-
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
-
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
-
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
-
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-controls="faq1" id="faq1-button">
-                    <p>
-                        Was ist dieses Projekt?
-                    </p>
-
-                    <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_329_93" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="25" height="24">
-                            <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_329_93)">
-                            <path
-                                d="M7.9 15.3751L6.5 13.9751L12.5 7.9751L18.5 13.9751L17.1 15.3751L12.5 10.7751L7.9 15.3751Z"
-                                fill="#2D2C2F" />
-                        </g>
-                    </svg>
-
-                </button>
-
-                <div id="faq1" v-if="isOpen" role="region" aria-labelledby="faq1-button" class="faq-answer">
-                    <p>Das Projekt ist eine Web-App, die …</p>
-                </div>
-            </div>
+            </template>
         </div>
     </section>
 
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
+import faqButtons from "../../data/FaqButtons";
 
-const isOpen = ref(false);
+const openIds = ref<Set<string>>(new Set())
 
+function toggle(id: string) {
+    if (openIds.value.has(id)) {
+        openIds.value.delete(id)
+    } else {
+        openIds.value.add(id)
+    }
+    // Da Set eine Referenz ist, setze es neu, damit Vue reaktiv ist:
+    openIds.value = new Set(openIds.value)
+}
 </script>
 
 <style lang="scss">
@@ -191,7 +73,6 @@ const isOpen = ref(false);
 }
 
 .faq-box {
-
     @include mixins.faq-box;
 
     button {
@@ -214,7 +95,10 @@ const isOpen = ref(false);
 }
 
 .faq-answer {
+    @include mixins.faq-button;
+    width: auto;
     overflow: hidden;
+
 }
 
 .faq-enter-from,

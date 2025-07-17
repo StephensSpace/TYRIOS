@@ -180,3 +180,23 @@
     transition-duration: vars.$transition-duration;
     transition-timing-function: ease;
 }
+
+@mixin dropdown-option {
+  // Grundstil für Optionen
+  display: block;
+  width: 100%;
+  padding: 4px;
+  color: #333;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: vars.$font-primary;
+  @include font-style-small;
+
+  &:disabled {
+    color: #999;
+    background: #f5f5f5;
+    cursor: not-allowed;
+  }
+}

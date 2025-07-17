@@ -1,6 +1,5 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <!-- FIXE INPUTS IN EINER ROW -->
     <div class="input-row">
       <div class="form-group">
         <label for="email">Email address</label>
@@ -18,14 +17,24 @@
       <textarea id="message" placeholder="Ich wünsche mir ..." v-model="message"></textarea>
     </div>
 
-    <div v-else-if="variant === 'dropdown'" class="form-group">
-      <label for="selection">Intent for analysis?</label>
-      <select id="selection" v-model="dropdownSelection" required>
-        <option disabled value="">Bitte auswählen</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-      </select>
-    </div>
+    <div v-else-if="variant === 'dropdown'" class="form-group" role="group" aria-labelledby="selection-label">
+  <label id="selection-label" for="selection">Intent for analysis?</label>
+  <select
+    id="selection"
+    v-model="dropdownSelection"
+    required
+    aria-required="true"
+    aria-describedby="selection-help"
+  >
+    <option disabled value="">What's your primary goal for this analysis?</option>
+    <option v-for="item in formDropItems" :key="item.id" :value="item.id">
+      {{ item.textEN }}
+    </option>
+  </select>
+  <span id="selection-help" class="sr-only">
+    Please select an option of the list.
+  </span>
+</div>
 
     <div class="submit-box">
       <button type="submit" class="submit-button">
@@ -40,6 +49,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import formDropItems from "../../data/FormDropdown";
 
 defineProps({
   variant: {
@@ -111,6 +121,11 @@ form {
       outline: none;
     }
   }
+
+  option {
+    @include mixins.dropdown-option; // Dein Dropdown-Option-Mixin hier einfügen
+  }
+
 }
 
 .describe-intend-box {
@@ -128,7 +143,7 @@ form {
   flex-direction: column;
   width: 100%;
   gap: 16px;
-  
+
   p {
     margin-block: 0;
     width: 100%;
@@ -139,8 +154,8 @@ form {
   button {
     @include mixins.form-button;
     width: 100%;
-    
+
   }
- 
+
 }
 </style>
