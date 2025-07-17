@@ -91,7 +91,7 @@
     border-radius: 4px;
     padding: 8px;
     gap: 4px;
-    
+
     background-color: var(--tyrios-purple);
     flex-direction: if($icon-position ==left, row-reverse, row);
     border: none;
@@ -145,4 +145,38 @@
     text-align: center;
     width: 100%;
     margin: 0;
+}
+
+@mixin faq-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #E5E4E6;
+    border-radius: 4px;
+    padding: 8px;
+    gap: 16px;
+    background-color: var(--tyrios-white);
+    font-family: inherit;
+}
+
+@mixin faq-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    max-width: 735px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 296px;
+    height: 100%;
+}
+
+@mixin faq-arrow-icon {
+    width: vars.$arrow-size;
+    height: vars.$arrow-size;
+    fill: vars.$arrow-color;
+    transition-property: transform;
+    transition-duration: vars.$transition-duration;
+    transition-timing-function: ease;
 }

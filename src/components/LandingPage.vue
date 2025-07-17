@@ -6,6 +6,7 @@ import DifferenceMaker from "./DifferenceMaker.vue";
 import HowTo from "./HowTo.vue"
 import TestimonialComponent from "./shared/TestimonialComponent.vue";
 import FaqSection from "./shared/FaqSection.vue"
+import Footer from "./shared/Footer.vue";
 </script>
 
 <template>
@@ -23,16 +24,23 @@ import FaqSection from "./shared/FaqSection.vue"
       <HowTo />
       <TestimonialComponent />
       <FaqSection />
-
     </main>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
 @use "../styles/_mixins.scss" as mixins;
+
 header {
   width: 100%;
-  height: 60px;
+}
+
+footer {
+  width: 100%;
+
 }
 
 .landing-body {
@@ -46,8 +54,8 @@ header {
 }
 
 .header-hero-box {
-    width: 100%;
-  }
+  width: 100%;
+}
 
 main {
   @include mixins.dflex-centered;
@@ -56,6 +64,4 @@ main {
   width: 100%;
   gap: 60px;
 }
-
-
 </style>
