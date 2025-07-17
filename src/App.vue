@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import LandingPage from './components/LandingPage.vue'
+import LandingPageStrategic from './components/LandingPageStrategic.vue'
 </script>
 
 <template>
-  <LandingPage />
+  <LandingPageStrategic />
   
 </template>
