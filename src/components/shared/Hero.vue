@@ -7,9 +7,7 @@
       </div>
       <h1>{{ title }}</h1>
       <p class="subtitle">{{ subtitle }}</p>
-
-      <Form variant="dropdown" />
-
+      <Form :variant="formVariant ?? 'dropdown'" />
       <div class="benefits-box">
         <div class="benefit" v-for="item in infoSpans" :key="item">
           <img src="../../assets/icons/check.png" alt="Green Check Icon" />
@@ -28,6 +26,7 @@ const props = defineProps<HeroProps>();
 
 <style scoped lang="scss">
 @use "../../styles/_mixins.scss" as mixins;
+
 .hero {
   @include mixins.dflex-centered;
   height: 844px;
@@ -45,7 +44,7 @@ const props = defineProps<HeroProps>();
     height: 644px;
 
     .benefits-box {
-      @include mixins.dflex-centered;      
+      @include mixins.dflex-centered;
       gap: 24px;
 
       .benefit {

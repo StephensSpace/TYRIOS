@@ -19,7 +19,7 @@ export const howToList: HowToList[] = [
   {
     id: 3,
     title: "Get Strategic Report",
-    subtitle: "Understand how visitors interact with your site and remove friction points that hurt engagement.",
+    subtitle: "Receive a manager-focused report with clear, actionable recommendations tailored to your business objectives.",
   }
 ];
 
