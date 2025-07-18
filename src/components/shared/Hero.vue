@@ -6,7 +6,7 @@
         <p>Effective Communication Strategies for Your Website</p>
       </div>
       <h1>{{ title }}</h1>
-      <p class="subtitle">{{ subtitle }}</p>
+      <p class="subtitle">{{ props.subtitle }}</p>
       <Form :variant="formVariant ?? 'dropdown'" />
       <div class="benefits-box">
         <div class="benefit" v-for="item in infoSpans" :key="item">
@@ -39,6 +39,7 @@ const props = defineProps<HeroProps>();
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 24px;
     max-width: 720px;
     height: 644px;

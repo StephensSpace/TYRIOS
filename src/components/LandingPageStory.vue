@@ -10,6 +10,7 @@ import Footer from "./shared/Footer.vue";
 import Statistics from "./Statistics.vue";
 import SevenElement from "./SevenElement.vue";
 import Discover from "./Discover.vue";
+import ProgressCircle from "./shared/ProgressCircle.vue";
 </script>
 
 <template>
@@ -33,6 +34,7 @@ import Discover from "./Discover.vue";
       <HowTo />
       <TestimonialComponent />
       <FaqSection />
+      <ProgressCircle :showValue="true"/>
     </main>
     <footer>
       <Footer />
