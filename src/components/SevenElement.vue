@@ -28,7 +28,7 @@ import sevenElements from '../data/SevenElementsList';
 .seven-elements-body {
     @include mixins.dflex-centered;
     flex-direction: column;
-    max-width: 1344px;
+    max-width: 1376px;
     margin: 0 auto;
     width: 100%;
     padding: 32px;

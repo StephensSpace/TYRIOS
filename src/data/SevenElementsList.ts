@@ -15,7 +15,7 @@ export interface SevenElementsList {
   alt: string;
 }
 
-export const sevenElementsList: SevenElementsList[] = [
+export const sevenElements: SevenElementsList[] = [
   {
     id: 1,
     title: "Your Ideal Customer",
@@ -67,4 +67,4 @@ export const sevenElementsList: SevenElementsList[] = [
   },
 ];
 
-export default sevenElementsList;
+export default sevenElements;

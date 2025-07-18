@@ -9,6 +9,7 @@ import FaqSection from "./shared/FaqSection.vue"
 import Footer from "./shared/Footer.vue";
 import Statistics from "./Statistics.vue";
 import SevenElement from "./SevenElement.vue";
+import Discover from "./Discover.vue";
 </script>
 
 <template>
@@ -27,6 +28,7 @@ import SevenElement from "./SevenElement.vue";
 
     <main>
       <Statistics />
+      <Discover />
       <SevenElement />
       <HowTo />
       <TestimonialComponent />

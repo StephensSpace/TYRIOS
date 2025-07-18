@@ -20,6 +20,11 @@
     line-height: 28px;
 }
 
+@mixin font-style-medium-small {
+    font-size: 24px;
+    line-height: 32px;
+}
+
 @mixin font-style-small {
     font-size: 16px;
     line-height: 24px;
@@ -123,6 +128,13 @@
     margin: 0;
 }
 
+@mixin header05 {
+    @include font-style-medium-small;
+    font-weight: 500;
+    width: 100%;
+    margin: 0;
+}
+
 @mixin header06 {
     @include font-style-medium;
     font-weight: 500;
@@ -182,21 +194,31 @@
 }
 
 @mixin dropdown-option {
-  // Grundstil für Optionen
-  display: block;
-  width: 100%;
-  padding: 4px;
-  color: #333;
-  background: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-  font-family: vars.$font-primary;
-  @include font-style-small;
+    // Grundstil für Optionen
+    display: block;
+    width: 100%;
+    padding: 4px;
+    color: #333;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-family: vars.$font-primary;
+    @include font-style-small;
 
-  &:disabled {
-    color: #999;
-    background: #f5f5f5;
-    cursor: not-allowed;
-  }
+    &:disabled {
+        color: #999;
+        background: #f5f5f5;
+        cursor: not-allowed;
+    }
+}
+
+@mixin pro-contra-box {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    gap: 24px;
+    flex-direction: column;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
