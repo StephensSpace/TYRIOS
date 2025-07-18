@@ -96,7 +96,6 @@
     border-radius: 4px;
     padding: 8px;
     gap: 4px;
-
     background-color: var(--tyrios-purple);
     flex-direction: if($icon-position ==left, row-reverse, row);
     border: none;
@@ -126,6 +125,14 @@
     text-align: center;
     width: 100%;
     margin: 0;
+}
+
+@mixin header04 {
+    @include font-style-medium-small;
+    width: 100%;
+    margin: 0;
+    color: var(--tyrios-purple);
+    font-weight: 600;
 }
 
 @mixin header05 {
@@ -189,10 +196,11 @@
     flex-direction: column;
     gap: 24px;
     padding: 24px;
-    border-radius: 2px;
+    border-radius: 8px;
     border: 2px solid;
     border-color: var(--tyrios-border-grey);
     width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -243,4 +251,12 @@
     max-width: 840px;
     width: 100%;
     margin: 0 auto;
+}
+
+@mixin result-left-right-box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 408px;
 }

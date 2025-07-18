@@ -23,7 +23,8 @@ export interface SectionData {
 export interface ScoreData {
   progressCircle: ProgressCircleConfig;
   date: string;         
-  customerUrl: string;  
+  customerUrl: string; 
+  executiveSummary: string; 
 }
 
 export interface ResultConfig {
@@ -35,9 +36,13 @@ export interface ResultConfig {
 
 export const resultConfigs: ResultConfig = {
   score: {
-    progressCircle: { size: 150, value: 85, showValue: true },
+    progressCircle: { size: 76, value: 6, showValue: false },
     date: "2025-07-18",
-    customerUrl: "https://example.com/customer"
+    customerUrl: "https://example.com/customer",
+    executiveSummary: `CraftMyBrand's website presents a well-structured 
+      and visually appealing presentation of their services. While the 
+      messaging is clear and the design is clean, there are opportunities 
+      to enhance sales effectiveness and overall strategic impact.`
   },
   sections: {
     storyMessage: {

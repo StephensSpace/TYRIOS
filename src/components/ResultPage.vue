@@ -3,6 +3,9 @@ import Header from "./shared/Header.vue";
 import Footer from "./shared/Footer.vue";
 import ResultSectionCard from "./shared/ResultSectionCard.vue";
 import resultConfigs from "../data/dummyBackendData/resultObject.ts";
+import ResultSummary from "./shared/ResultSummary.vue";
+import ScoreExplenation from "./ScoreExplenation.vue";
+import OverallResults from "./OverallResults.vue";
 </script>
 
 <template>
@@ -12,7 +15,12 @@ import resultConfigs from "../data/dummyBackendData/resultObject.ts";
         </header>
 
         <main>
-            <ResultSectionCard :resultData="resultConfigs.sections.storyMessage" />
+            <OverallResults :scoreData="resultConfigs.score" />
+            <ScoreExplenation />
+            <div class="dividing-border"></div>
+            <h6>Analysis Report</h6>
+            <ResultSummary :summaryText="resultConfigs.score" :scoreOverview="resultConfigs.sections" />
+            <ResultSectionCard v-for="(section, index) in resultConfigs.sections" :key="index" :resultData="section" />
         </main>
 
         <footer>
@@ -31,6 +39,14 @@ header {
 footer {
     width: 100%;
 
+}
+
+.dividing-border {
+    max-width: 888px;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #969A9E;
+    box-sizing: border-box;
 }
 
 .landing-body {
@@ -52,6 +68,11 @@ main {
     flex-direction: column;
     max-width: 888px;
     width: 100%;
-    gap: 60px;
+    gap: 32px;
+}
+
+h6 {
+    @include mixins.header06;
+    text-align: start;
 }
 </style>

@@ -29,7 +29,7 @@
         <div class="divider"></div>
         <div class="result-card-box">
             <div class="undersection-header">
-                <img src="../../assets/icons/bid_landscape.png" alt="Landscape Icon">
+                <img src="../../assets/icons/table_eye.png" alt="Landscape Icon">
                 <h6>Current Impression</h6>
             </div>
             <p>{{ resultData.currentImpression }}</p>
@@ -37,7 +37,7 @@
         <div class="divider"></div>
         <div class="result-card-box">
             <div class="undersection-header">
-                <img src="../../assets/icons/bid_landscape.png" alt="Landscape Icon">
+                <img src="../../assets/icons/thumb_up.png" alt="Table Eye Icon">
                 <h6>Recomandations</h6>
             </div>
             <template v-for="(item, index) in resultData.recommendations" :key="index">
@@ -47,7 +47,21 @@
                 </div>
             </template>
         </div>
-        <div class="divider"></div>
+        <div class="divider" v-if="resultData.suggestedImprovements"></div>
+        <div class="result-card-box" v-if="resultData.suggestedImprovements">
+            <div class="undersection-header">
+                <img src="../../assets/icons/chat.png" alt="Thumb Up Icon">
+                <h6>Suggested Copy Improvements</h6>
+            </div>
+            <template v-for="(item, index) in resultData.suggestedImprovements" :key="index">
+                <div class="improvment-items">
+                    <div class="rectangle"></div>
+                    <div class="improvment-text-box">
+                        <p>{{ item }}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
     </section>
 </template>
 
@@ -67,7 +81,7 @@ const color =
             "var(--tyrios-strong-green)";
 
 const ratingWord =
-    value < 3.3 ? "Bad" :
+    value < 3.3 ? "Poor" :
         value < 6.6 ? "Average" :
             "Good";
 </script>
@@ -77,7 +91,7 @@ const ratingWord =
 
 .result-card-wrapper {
     @include mixins.result-card;
-    box-sizing: border-box;
+    
 
     .divider {
         max-width: 840px;
@@ -95,6 +109,12 @@ const ratingWord =
     .result-card-box {
         @include mixins.result-card-box;
         justify-content: space-between;
+
+        .improvment-items {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
 
         p {
             margin: 0;
@@ -122,6 +142,12 @@ const ratingWord =
             display: flex;
             gap: 8px;
             width: 100%;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
         }
     }
 
@@ -171,6 +197,32 @@ const ratingWord =
             display: flex;
             align-items: flex-end;
         }
+    }
+
+    .rectangle {
+        width: 6px;
+        background: var(--tyrios-purple);
+        border-radius: 4px 0 0 4px;
+        min-height: 40px;
+        height: -webkit-fill-available;
+    }
+
+    .improvment-text-box {
+        display: flex;
+        box-sizing: border-box;
+        gap: 4px;
+        padding: 8px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background: #F6F2FF;
+        width: 100%;
+
+        p {
+            margin: 0;
+            width: 100%;
+            
+        }
+
     }
 }
 </style>

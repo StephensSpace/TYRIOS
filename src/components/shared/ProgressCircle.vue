@@ -1,14 +1,14 @@
 <template>
-  <div
-    class="progress-circle"
-    :style="{
-      '--size': size + 'px',
-      '--value': value,
-      '--color': color
-    }"
-  >
+  <div class="progress-circle" :style="{
+    '--size': size + 'px',
+    '--value': value,
+    '--color': color
+  }">
     <div class="progress-inner">
-      <span v-if="showValue">{{ value }}</span>
+      <div class="rating-number" v-if="showValue">
+        <p class="value" :style="{ color: color }">{{ value }}</p>
+        <p class="ten">/10</p>
+      </div>
     </div>
   </div>
 </template>
@@ -17,23 +17,24 @@
 
 
 const props = defineProps<{
-  size?: number;        
-  value?: number;       
-  showValue: boolean | undefined; 
+  size?: number;
+  value?: number;
+  showValue: boolean | undefined;
 }>();
 
-const size = props.size ?? 100;   
+const size = props.size ?? 100;
 const showValue = props.showValue;
-const value = props.value ?? 5;  
+const value = props.value ?? 5;
 
 
 const color =
   value < 3.3 ? "var(--tyrios-dark-red)" :
-  value < 6.6 ? "var(--tyrios-warning-yellow)" :
-  "var(--tyrios-strong-green)";
+    value < 6.6 ? "var(--tyrios-warning-yellow)" :
+      "var(--tyrios-strong-green)";
 </script>
 
 <style lang="scss" scoped>
+@use '../../styles/mixins' as mixins;
 
 .progress-circle {
   display: flex;
@@ -42,10 +43,8 @@ const color =
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: conic-gradient(
-    var(--color) calc(var(--value) * 10%), 
-    #ddd 0
-  );
+  background: conic-gradient(var(--color) calc(var(--value) * 10%),
+      #ddd 0);
 
   .progress-inner {
     width: calc(var(--size) * 0.6);
@@ -56,10 +55,26 @@ const color =
     justify-content: center;
     align-items: center;
 
-    span {
-      font-size: calc(var(--size) * 0.2);
-      color: #333;
-      font-weight: bold;
+    .rating-number {
+      display: flex;
+      width: fit-content;
+
+      .value {
+        @include mixins.dflex-centered;
+        @include mixins.font-style-small;
+        font-weight: 600;
+        margin: 0;
+        width: 16px;
+        height: 32px;
+      }
+
+      .ten {
+        @include mixins.font-style-small;
+        margin: 0;
+        color: var(--tyrios-medium-grey);
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
