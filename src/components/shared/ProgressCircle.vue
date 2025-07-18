@@ -19,7 +19,7 @@
 const props = defineProps<{
   size?: number;        
   value?: number;       
-  showValue: boolean; 
+  showValue: boolean | undefined; 
 }>();
 
 const size = props.size ?? 100;   
@@ -48,8 +48,8 @@ const color =
   );
 
   .progress-inner {
-    width: calc(var(--size) * 0.5);
-    height: calc(var(--size) * 0.5);
+    width: calc(var(--size) * 0.6);
+    height: calc(var(--size) * 0.6);
     border-radius: 50%;
     background: white;
     display: flex;

@@ -10,7 +10,6 @@ import Footer from "./shared/Footer.vue";
 import Statistics from "./Statistics.vue";
 import SevenElement from "./SevenElement.vue";
 import Discover from "./Discover.vue";
-import ProgressCircle from "./shared/ProgressCircle.vue";
 </script>
 
 <template>
@@ -23,8 +22,7 @@ import ProgressCircle from "./shared/ProgressCircle.vue";
   :title="HeroContentStrategic.title" 
   :subtitle="HeroContentStrategic.subtitle"
   :infoSpans="HeroContentStrategic.infoSpans"
-  formVariant="text" 
-/>
+  formVariant="text"/>
     </div>
 
     <main>
@@ -34,7 +32,6 @@ import ProgressCircle from "./shared/ProgressCircle.vue";
       <HowTo />
       <TestimonialComponent />
       <FaqSection />
-      <ProgressCircle :showValue="true"/>
     </main>
     <footer>
       <Footer />
