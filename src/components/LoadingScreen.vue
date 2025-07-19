@@ -75,7 +75,7 @@ import Footer from "./shared/Footer.vue";
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "../styles/_mixins.scss" as mixins;
 
 header {

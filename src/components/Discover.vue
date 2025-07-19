@@ -1,5 +1,4 @@
 <template>
-
     <section class="discover-wrapper">
         <div class="pro-cons-box">
             <div class="cons-box">

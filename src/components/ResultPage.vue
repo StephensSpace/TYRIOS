@@ -48,7 +48,7 @@ watch(showOverlay, (visible) => {
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "../styles/_mixins.scss" as mixins;
 
 header {

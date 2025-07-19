@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-content">
       <div class="speaker-message-box">
-        <img src="../../assets/icons/brand_awareness.png" alt="" />
+        <img src="../../assets/icons/brand_awareness.png" alt="Brand Awareness Icon" />
         <p>Effective Communication Strategies for Your Website</p>
       </div>
       <h1>{{ title }}</h1>
@@ -10,7 +10,7 @@
       <Form :variant="formVariant ?? 'dropdown'" />
       <div class="benefits-box">
         <div class="benefit" v-for="item in infoSpans" :key="item">
-          <img src="../../assets/icons/check.png" alt="Green Check Icon" />
+          <img src="../../assets/icons/check.png" aria-hidden="true"/>
           <p>{{ item }}</p>
         </div>
       </div>

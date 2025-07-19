@@ -3,7 +3,9 @@
     '--size': size + 'px',
     '--value': value,
     '--color': color
-  }">
+  }"
+  role="img"
+  :aria-label="`Rating ${value} out of 10`">
     <div class="progress-inner">
       <div class="rating-number" v-if="showValue">
         <p class="value" :style="{ color: color }">{{ value }}</p>

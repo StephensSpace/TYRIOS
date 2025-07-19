@@ -8,38 +8,35 @@
 
       <div class="form-group">
         <label for="website">Website Url</label>
-        <input id="website" type="url" placeholder="https://deine-website.de" v-model="websiteUrl" required />
+        <input id="website" type="url" placeholder="https://website.com" v-model="websiteUrl" required />
       </div>
     </div>
 
     <div v-if="variant === 'text'" class="form-group">
-      <label for="message">Beschreibe dein Anliegen</label>
-      <textarea id="message" placeholder="Ich wünsche mir ..." v-model="message"></textarea>
+      <label for="message"></label>
+      <textarea id="message"
+        placeholder="e.g., Increase brand awareness, generate more leads, improve conversion rates.."
+        v-model="message"></textarea>
     </div>
 
     <div v-else-if="variant === 'dropdown'" class="form-group" role="group" aria-labelledby="selection-label">
-  <label id="selection-label" for="selection">Intent for analysis?</label>
-  <select
-    id="selection"
-    v-model="dropdownSelection"
-    required
-    aria-required="true"
-    aria-describedby="selection-help"
-  >
-    <option disabled value="">What's your primary goal for this analysis?</option>
-    <option v-for="item in formDropItems" :key="item.id" :value="item.id">
-      {{ item.textEN }}
-    </option>
-  </select>
-  <span id="selection-help" class="sr-only">
-    Please select an option of the list.
-  </span>
-</div>
+      <label id="selection-label" for="selection">Intent for analysis?</label>
+      <select id="selection" v-model="dropdownSelection" required aria-required="true"
+        aria-describedby="selection-help">
+        <option disabled value="">What's your primary goal for this analysis?</option>
+        <option v-for="item in formDropItems" :key="item.id" :value="item.id">
+          {{ item.textEN }}
+        </option>
+      </select>
+      <span id="selection-help" class="sr-only">
+        Please select an option of the list.
+      </span>
+    </div>
 
     <div class="submit-box">
       <button type="submit" class="submit-button">
         <p>Get my free analysis</p>
-        <img src="../../assets/icons/arrow.png" alt="Arrow right">
+        <img src="../../assets/icons/arrow.png" aria-hidden="true">
       </button>
 
       <p class="form-note">{{ note }}</p>
@@ -120,12 +117,24 @@ form {
       border-color: #007bff;
       outline: none;
     }
+
+    &::placeholder {
+      font-family: 'Poppins', sans-serif;
+      @include mixins.font-style-small;
+      font-weight: 400;
+      color: var(--tyrios-medium-grey);
+    }
+  }
+
+  textarea {
+    min-height: 40px;
+    max-height: 300px;
+    resize: vertical;
   }
 
   option {
-    @include mixins.dropdown-option; // Dein Dropdown-Option-Mixin hier einfügen
+    @include mixins.dropdown-option;
   }
-
 }
 
 .describe-intend-box {
@@ -156,6 +165,5 @@ form {
     width: 100%;
 
   }
-
 }
 </style>
