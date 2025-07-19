@@ -20,7 +20,8 @@
   --tyrios-border-grey: #F1EBFF;
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
