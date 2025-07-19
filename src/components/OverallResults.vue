@@ -10,11 +10,11 @@
                 </h4>
             </div>
             <div class="header-btn-box">
-                <button class="pro-support-btn">
+                <button class="pro-support-btn" @click="emit('open-overlay', 'support')">
                     <img src="../assets/icons/person.png" alt="Proffesional Help Icon">
                     <p>Get proffesional support</p>
                 </button>
-                <button class="share-btn">
+                <button class="share-btn" @click="emit('open-overlay', 'share')">
                     <img src="../assets/icons/share.png" alt="Share Icon">
                     <p>Share</p>
                 </button>
@@ -28,7 +28,7 @@
                     <img src="../assets/icons/globe.png" alt="Globe icon">
                     <p>URL: <a href="https://frontendschaz.de">
                             frontendschaz.de
-                            </a>
+                        </a>
                     </p>
                 </div>
                 <div class="date-box">
@@ -41,15 +41,15 @@
             <div class="circle-rating-box">
                 <div class="rating-number-label">
                     <div class="number-box">
-
+                        <p class="value" :style="{ color: color }">{{ value }}</p>
+                        <p class="ten">/10</p>
                     </div>
-                    <div class="rating-label">
-                        
+                    <div class="rating-label" :style="{ backgroundColor: color }">
+                        {{ ratingWord }}
                     </div>
                 </div>
-                <ProgressCircle :show-value="scoreData.progressCircle.showValue" 
-                :size="scoreData.progressCircle.size" 
-                :value="scoreData.progressCircle.value"/>
+                <ProgressCircle :show-value="scoreData.progressCircle.showValue" :size="scoreData.progressCircle.size"
+                    :value="scoreData.progressCircle.value" />
 
             </div>
         </div>
@@ -60,7 +60,8 @@
 
 <script setup lang="ts">
 import ProgressCircle from './shared/ProgressCircle.vue';
-import type { ScoreData, ProgressCircleConfig } from '../data/dummyBackendData/resultObject';
+import type { ScoreData } from '../data/dummyBackendData/resultObject';
+
 
 const props = defineProps<{
     scoreData: ScoreData;
@@ -77,6 +78,10 @@ const ratingWord =
     value < 3.3 ? "Poor" :
         value < 6.6 ? "Average" :
             "Good";
+
+const emit = defineEmits<{
+    (e: 'open-overlay', type: 'support' | 'share'): void
+}>();
 
 </script>
 
@@ -145,6 +150,12 @@ const ratingWord =
         padding: 16px;
         box-sizing: border-box;
 
+        .circle-rating-box {
+            display: flex;
+            width: 100%;
+            gap: 24px;
+        }
+
         .rating-number-label {
             display: flex;
             flex-direction: column;
@@ -155,12 +166,27 @@ const ratingWord =
         }
 
         .number-box {
+            display: flex;
+
+            .value {
+                @include mixins.dflex-centered;
+                @include mixins.header02;
+                font-weight: 600;
+                margin: 0;
+                height: 48px;
+            }
+
+            .ten {
+                @include mixins.font-style-medium;
+                margin: 0;
+                color: var(--tyrios-medium-grey);
+                display: flex;
+                align-items: flex-end;
+            }
 
         }
 
-        .rating-label {
-
-        }
+        
 
         .url-date-box {
             display: flex;
@@ -168,9 +194,9 @@ const ratingWord =
             gap: 16px;
 
             img {
-                    width: 24px;
-                    height: 24px;
-                }
+                width: 24px;
+                height: 24px;
+            }
 
             .url-box {
                 display: flex;
