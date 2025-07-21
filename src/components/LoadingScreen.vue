@@ -64,8 +64,8 @@ import Footer from "./shared/Footer.vue";
                         </h6>
                     </div>
                 </div>
-                <p>No need to wait—We will notify you via email whenever 
-                   your report is ready</p>
+                <p>No need to wait—We will notify you via email whenever
+                    your report is ready</p>
             </div>
         </main>
 
@@ -152,10 +152,12 @@ main {
     }
 
     p {
+        display: flex;
         margin: 0;
         font-weight: 400;
         @include mixins.font-style-small;
         gap: 3px;
+        text-align: center
     }
 
     .loading-wrapper {
@@ -168,10 +170,12 @@ main {
             display: flex;
             justify-content: center;
             gap: 16px;
+            flex-wrap: wrap;
 
             .queue-position {
                 display: flex;
                 gap: 1px;
+                white-space: nowrap;
             }
 
             .queue-number {
@@ -191,6 +195,37 @@ main {
             }
 
 
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    
+        .queue-steps {
+            .step-box {
+
+                .circle-filled,
+                .circle-empty {
+                    width: 48px !important;
+                    height: 48px !important;
+                }
+            }
+        }
+    
+
+
+}
+
+@media (max-width: 500px) {
+
+    .queue-steps {  
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+
+        .step-box {
+            padding: 2px !important;
         }
     }
 }

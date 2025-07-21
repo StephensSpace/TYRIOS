@@ -12,11 +12,11 @@
             <div class="header-btn-box">
                 <button class="pro-support-btn" @click="emit('open-overlay', 'support')">
                     <img src="../assets/icons/person.png" alt="Proffesional Help Icon">
-                    <p>Get proffesional support</p>
+                    Get proffesional support
                 </button>
                 <button class="share-btn" @click="emit('open-overlay', 'share')">
                     <img src="../assets/icons/share.png" alt="Share Icon">
-                    <p>Share</p>
+                    Share
                 </button>
 
             </div>
@@ -107,13 +107,7 @@ const emit = defineEmits<{
             gap: 16px;
 
             .pro-support-btn {
-                @include mixins.form-button;
-
-                p {
-                    height: 24px;
-                    display: flex;
-                    align-items: center
-                }
+                @include mixins.form-button;           
             }
 
             .share-btn {
@@ -121,13 +115,7 @@ const emit = defineEmits<{
                 background-color: unset;
                 border: 1px solid var(--tyrios-dark-grey);
                 width: 100%;
-
-                p {
-                    height: 24px;
-                    display: flex;
-                    align-items: center;
-                    color: var(--tyrios-dark-grey);
-                }
+                color: var(--tyrios-dark-grey);
             }
 
             h4 {

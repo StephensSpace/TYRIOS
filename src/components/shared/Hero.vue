@@ -3,7 +3,7 @@
     <div class="hero-content">
       <div class="speaker-message-box">
         <img src="../../assets/icons/brand_awareness.png" alt="Brand Awareness Icon" />
-        <p>Effective Communication Strategies for Your Website</p>
+        Effective Communication Strategies for Your Website
       </div>
       <h1>{{ title }}</h1>
       <p class="subtitle">{{ props.subtitle }}</p>
@@ -29,7 +29,7 @@ const props = defineProps<HeroProps>();
 
 .hero {
   @include mixins.dflex-centered;
-  height: 844px;
+  min-height: calc(92vh - 72px);
   color: white;
   padding: 4px 0;
   background-color: var(--hero-bg-colour);
@@ -42,7 +42,6 @@ const props = defineProps<HeroProps>();
     justify-content: center;
     gap: 24px;
     max-width: 720px;
-    height: 644px;
 
     .benefits-box {
       @include mixins.dflex-centered;

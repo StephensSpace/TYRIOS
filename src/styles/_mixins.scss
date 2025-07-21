@@ -1,38 +1,38 @@
 @use './_variables.scss' as vars;
 
 @mixin font-style-xlarge {
-    font-size: 48px;
-    line-height: 56px;
+  font-size: clamp(32px, 4vw + 1rem, 48px);    // max=48px bleibt
+  line-height: clamp(40px, 5vw + 1rem, 56px);
 }
 
 @mixin font-style-large {
-    font-size: 40px;
-    line-height: 48px;
+  font-size: clamp(28px, 3.5vw + 1rem, 40px);
+  line-height: clamp(36px, 4vw + 1rem, 48px);
 }
 
 @mixin font-style-medium-large {
-    font-size: 32px;
-    line-height: 40px;
-}
-
-@mixin font-style-medium {
-    font-size: 20px;
-    line-height: 28px;
+  font-size: clamp(24px, 3vw + 0.5rem, 32px);
+  line-height: clamp(32px, 3.5vw + 0.5rem, 40px);
 }
 
 @mixin font-style-medium-small {
-    font-size: 24px;
-    line-height: 32px;
+  font-size: clamp(18px, 2vw + 0.5rem, 24px);
+  line-height: clamp(24px, 2.5vw + 0.5rem, 32px);
+}
+
+@mixin font-style-medium {
+  font-size: clamp(13px, 1.5vw + 0.5rem, 20px);
+  line-height: clamp(20px, 2vw + 0.5rem, 28px);
 }
 
 @mixin font-style-small {
-    font-size: 16px;
-    line-height: 24px;
+  font-size: clamp(13px, 1vw + 0.5rem, 16px);
+  line-height: clamp(20px, 1.5vw + 0.5rem, 24px);
 }
 
 @mixin font-style-xsmall {
-    font-size: 14px;
-    line-height: 24px;
+  font-size: clamp(12px, 0.8vw + 0.5rem, 14px);
+  line-height: 24px;
 }
 
 @mixin dflex-centered {
@@ -64,14 +64,13 @@
     background-color: var(--tyrios-medium);
     padding: 8px;
     gap: 4px;
-
-    p {
-        @include font-style-small;
-        margin-block: 0;
-        font-weight: 400;
-        color: var(--tyrios-purple);
-    }
-
+    max-width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    @include font-style-small;
+    font-weight: 400;
+    color: var(--tyrios-purple);
     img {
         width: 24px;
         height: 24px;
@@ -92,7 +91,7 @@
     @include dflex-centered;
     display: inline-flex;
     flex-direction: row;
-    height: 40px;
+    min-height: 40px;
     border-radius: 4px;
     padding: 8px;
     gap: 4px;
@@ -102,13 +101,12 @@
     cursor: pointer;
     font-family: inherit;
 
-    p {
-        @include font-style-small;
-        margin: 0;
-        width: fit-content;
-        font-weight: 500;
-        color: var(--tyrios-white);
-    }
+
+    @include font-style-small;
+    margin: 0;
+    font-weight: 500;
+    color: var(--tyrios-white);
+
 }
 
 @mixin header02 {
@@ -259,4 +257,41 @@
     gap: 24px;
     width: 100%;
     max-width: 408px;
+}
+
+@media (max-width: 600px) {
+  @mixin font-style-xlarge {
+    font-size: 36px;    // vorher 48px (-12)
+    line-height: 44px;  // vorher 56px (-12)
+  }
+
+  @mixin font-style-large {
+    font-size: 30px;    // vorher 40px (-10)
+    line-height: 38px;  // vorher 48px (-10)
+  }
+
+  @mixin font-style-medium-large {
+    font-size: 26px;    // vorher 32px (-6)
+    line-height: 34px;  // vorher 40px (-6)
+  }
+
+  @mixin font-style-medium-small {
+    font-size: 22px;    // vorher 24px (-2)
+    line-height: 30px;  // vorher 32px (-2)
+  }
+
+  @mixin font-style-medium {
+    font-size: 18px;    // vorher 20px (-2)
+    line-height: 26px;  // vorher 28px (-2)
+  }
+
+  @mixin font-style-small {
+    font-size: 15px;    // vorher 16px (-1)
+    line-height: 22px;  // vorher 24px (-2)
+  }
+
+  @mixin font-style-xsmall {
+    font-size: 13px;    // vorher 14px (-1)
+    line-height: 22px;  // vorher 24px (-2)
+  }
 }

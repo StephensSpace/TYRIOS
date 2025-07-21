@@ -35,7 +35,7 @@
 
     <div class="submit-box">
       <button type="submit" class="submit-button">
-        <p>Get my free analysis</p>
+        Get my free analysis
         <img src="../../assets/icons/arrow.png" aria-hidden="true">
       </button>
 
