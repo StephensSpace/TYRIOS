@@ -23,8 +23,7 @@
       <label id="selection-label" for="selection">Intent for analysis?</label>
       <select id="selection" v-model="dropdownSelection" required aria-required="true"
         aria-describedby="selection-help">
-        <option disabled value="">What's your primary goal for this analysis?</option>
-        <option v-for="item in formDropItems" :key="item.id" :value="item.id">
+        <option v-for="item in truncatedOptions" :key="item.id || 'default'" :value="item.id" :disabled="item.disabled">
           {{ item.textEN }}
         </option>
       </select>
@@ -45,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import formDropItems from "../../data/FormDropdown";
 
 defineProps({
@@ -63,6 +62,40 @@ const email = ref("");
 const websiteUrl = ref("");
 const message = ref("");
 const dropdownSelection = ref("");
+
+// Originaltexte speichern
+const originalOptions = formDropItems.map(item => ({ ...item }));
+
+// Gekürzte Optionen (reaktiv)
+const truncatedOptions = ref([...originalOptions]);
+
+function truncateOptions() {
+  truncatedOptions.value = originalOptions.map(item => ({
+    ...item,
+    textEN: item.textEN.length > 25 ? item.textEN.slice(0, 25) + "…" : item.textEN,
+  }));
+}
+
+function resetOptions() {
+  truncatedOptions.value = [...originalOptions];
+}
+
+function handleResize() {
+  if (window.innerWidth <= 550) {
+    truncateOptions();
+  } else {
+    resetOptions();
+  }
+}
+
+onMounted(() => {
+  handleResize(); // Direkt beim Mount prüfen
+  window.addEventListener("resize", handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", handleResize);
+});
 
 function onSubmit() {
   // laters: send Data to Backend Queque
@@ -164,6 +197,18 @@ form {
     @include mixins.form-button;
     width: 100%;
 
+  }
+}
+
+@media (max-width: 560px) {
+  form {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 490px) {
+  .input-row {
+    flex-direction: column;
   }
 }
 </style>

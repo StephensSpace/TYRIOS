@@ -46,6 +46,7 @@ const props = defineProps<HeroProps>();
     .benefits-box {
       @include mixins.dflex-centered;
       gap: 24px;
+      flex-wrap: wrap;
 
       .benefit {
         @include mixins.benefits-box;
@@ -65,4 +66,13 @@ const props = defineProps<HeroProps>();
     }
   }
 }
+
+@media(max-width: 440px) {
+  .benefits-box {
+    gap: 8px !important;
+    flex-direction: column;
+  }
+}
+
+
 </style>

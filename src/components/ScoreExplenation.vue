@@ -156,4 +156,12 @@
 
 
 }
+
+@media (max-width: 600px) {
+    .score-explain {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 </style>

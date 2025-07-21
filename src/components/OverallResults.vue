@@ -107,7 +107,7 @@ const emit = defineEmits<{
             gap: 16px;
 
             .pro-support-btn {
-                @include mixins.form-button;           
+                @include mixins.form-button;
             }
 
             .share-btn {
@@ -174,7 +174,7 @@ const emit = defineEmits<{
 
         }
 
-        
+
 
         .url-date-box {
             display: flex;
@@ -220,9 +220,30 @@ const emit = defineEmits<{
 
             }
         }
-
-
     }
+}
 
+@media (max-width: 420px) {
+    .overall-result-wrapper {
+        padding: 8px;
+        gap: 4px !important;
+
+        .right-side-data {
+            padding: 4px !important;
+
+        }
+    }
+}
+
+@media (max-width: 340px) {
+    .overall-result-wrapper {
+        padding: 6px;
+        gap: 2px !important;
+
+        .right-side-data {
+            padding: 3px !important;
+
+        }
+    }
 }
 </style>

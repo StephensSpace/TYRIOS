@@ -207,10 +207,14 @@ import proConList from '../data/ProConList';
                 margin: 0;
                 width: 100%;
             }
-
         }
+    }
+}
 
-
+@media (max-width: 675px) {
+    .discover-wrapper {
+        flex-direction: column;
+        align-items: center;
     }
 }
 </style>

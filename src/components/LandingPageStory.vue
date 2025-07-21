@@ -1,7 +1,7 @@
 <script setup>
 import Header from "./shared/Header.vue";
 import Hero from "./shared/Hero.vue";
-import HeroContentStrategic from "../data/HeroContentStrategic.ts";
+import HeroContentStory from "../data/HeroContentStory.ts";
 import DifferenceMaker from "./DifferenceMaker.vue";
 import HowTo from "./HowTo.vue"
 import TestimonialComponent from "./shared/TestimonialComponent.vue";
@@ -19,9 +19,9 @@ import Discover from "./Discover.vue";
         <Header />
       </header>
       <Hero 
-  :title="HeroContentStrategic.title" 
-  :subtitle="HeroContentStrategic.subtitle"
-  :infoSpans="HeroContentStrategic.infoSpans"
+  :title="HeroContentStory.title" 
+  :subtitle="HeroContentStory.subtitle"
+  :infoSpans="HeroContentStory.infoSpans"
   formVariant="text"/>
     </div>
 

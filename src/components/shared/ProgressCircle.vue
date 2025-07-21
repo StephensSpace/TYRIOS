@@ -80,4 +80,11 @@ const color =
     }
   }
 }
+
+@media (max-width: 400px) {
+  .progress-circle {
+    --size: 40px;
+  }
+}
+
 </style>

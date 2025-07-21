@@ -8,7 +8,7 @@
                 <div class="faq-item">
                     <button @click="toggle(faq.id)" :aria-expanded="openIds.has(faq.id)" :aria-controls="faq.id"
                         :id="`${faq.id}-button`">
-                        <p>{{ faq.titleEN }}</p>
+                        {{ faq.titleEN }}
 
                         <svg class="arrow-icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,6 @@ function toggle(id: string) {
     } else {
         openIds.value.add(id)
     }
-    // Da Set eine Referenz ist, setze es neu, damit Vue reaktiv ist:
     openIds.value = new Set(openIds.value)
 }
 </script>
@@ -78,11 +77,11 @@ function toggle(id: string) {
     button {
         @include mixins.faq-button;
 
-        p {
+        
             @include mixins.font-style-small;
             font-weight: 600;
-            margin: 0;
-        }
+            
+       
 
         .arrow-icon {
             @include mixins.faq-arrow-icon;

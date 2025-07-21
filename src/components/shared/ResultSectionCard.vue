@@ -91,7 +91,7 @@ const ratingWord =
 
 .result-card-wrapper {
     @include mixins.result-card;
-    
+
 
     .divider {
         max-width: 840px;
@@ -220,9 +220,21 @@ const ratingWord =
         p {
             margin: 0;
             width: 100%;
-            
+
         }
 
+    }
+}
+
+@media (max-width: 500px) {
+    .result-card-wrapper {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .result-card-wrapper {
+        padding: 4px;
     }
 }
 </style>
