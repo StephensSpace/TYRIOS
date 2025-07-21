@@ -187,6 +187,7 @@ form {
   gap: 16px;
 
   p {
+    @include mixins.font-style-xsmall;
     margin-block: 0;
     width: 100%;
     color: var(--tyrios-dark-grey);
