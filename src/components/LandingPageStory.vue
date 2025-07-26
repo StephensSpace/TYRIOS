@@ -18,11 +18,10 @@ import Discover from "./Discover.vue";
       <header>
         <Header />
       </header>
-      <Hero 
-  :title="HeroContentStory.title" 
-  :subtitle="HeroContentStory.subtitle"
-  :infoSpans="HeroContentStory.infoSpans"
-  formVariant="text"/>
+      <section aria-label="Hero section">
+        <Hero :title="HeroContentStory.title" :subtitle="HeroContentStory.subtitle"
+          :infoSpans="HeroContentStory.infoSpans" formVariant="text" />
+      </section>
     </div>
 
     <main>

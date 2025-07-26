@@ -15,8 +15,11 @@ import Footer from "./shared/Footer.vue";
       <header>
         <Header />
       </header>
-      <Hero :title="HeroContentStrategic.title" :subtitle="HeroContentStrategic.subtitle"
-        :infoSpans="HeroContentStrategic.infoSpans" />
+
+      <section aria-label="Hero section">
+        <Hero :title="HeroContentStrategic.title" :subtitle="HeroContentStrategic.subtitle"
+          :infoSpans="HeroContentStrategic.infoSpans" />
+      </section>
     </div>
 
     <main>
@@ -25,11 +28,13 @@ import Footer from "./shared/Footer.vue";
       <TestimonialComponent />
       <FaqSection />
     </main>
+
     <footer>
       <Footer />
     </footer>
   </div>
 </template>
+
 
 <style scoped lang="scss">
 @use "../styles/_mixins.scss" as mixins;

@@ -7,7 +7,7 @@
         <div class="difference-maker-wrapper">
             <div class="difference-box" v-for="item in differenceMaker" :key="item.id">
                 <img :src="item.imgUrl" :alt="item.alt" />
-                <h6>{{ item.title }}</h6>
+                <h3>{{ item.title }}</h3>
                 <p>{{ item.subtitle }}</p>
 
             </div>
@@ -75,7 +75,7 @@ import differenceMaker from '../data/Differencemaker';
         margin: 0 auto;
         box-sizing: border-box;
 
-        h6 {
+        h3 {
             @include mixins.header06;
         }
 

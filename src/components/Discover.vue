@@ -2,7 +2,7 @@
     <section class="discover-wrapper">
         <div class="pro-cons-box">
             <div class="cons-box">
-                <h5>The Common Mistakes</h5>
+                <h3>The Common Mistakes</h3>
                 <div class="pro-con-list">
                     <template  v-for="(item) in proConList" :key="item.id">
                         <div class="procon-list-item">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="pro-box">
-                <h5>Our Framework Fixes This</h5>
+                <h3>Our Framework Fixes This</h3>
                 <div class="pro-con-list">
                     <template  v-for="(item) in proConList" :key="item.id">
                         <div class="procon-list-item">
@@ -42,9 +42,9 @@
             </div>
         </div>
         <div class="discover-list-box">
-            <h5>
+            <h3>
                 What You'll Discover
-            </h5>
+            </h3>
             <p>
                 Comprehensive insights about your website's story
             </p>
@@ -53,7 +53,7 @@
                     <div class="list-item">
                         <img :src="item.imgUrl" :alt="item.alt" />
                         <div class="header-column">
-                            <h6>{{ item.titleEN }}</h6>
+                            <h4>{{ item.titleEN }}</h4>
                             <p>
                                 {{ item.subtitleEN }}
                             </p>
@@ -127,7 +127,7 @@ import proConList from '../data/ProConList';
             @include mixins.pro-contra-box;
             background-color: var(--tyrios-error-red);    
 
-            h5 {
+            h3 {
                 @include mixins.header05;
                 color: var(--tyrios-dark-red)
             }
@@ -138,7 +138,7 @@ import proConList from '../data/ProConList';
             @include mixins.pro-contra-box;
             background-color: var(--tyrios-succes-green);
 
-            h5 {
+            h3 {
                 @include mixins.header05;
                 color: var(--tyrios-strong-green)
             }
@@ -158,7 +158,7 @@ import proConList from '../data/ProConList';
         border-color: var(--tyrios-medium-purple);
         box-sizing: border-box;
 
-        h5 {
+        h3 {
             @include mixins.header05;
         }
 
@@ -197,7 +197,7 @@ import proConList from '../data/ProConList';
             flex-direction: column;
             gap: 8px;
 
-            h6 {
+            h4 {
                 @include mixins.header06;
                 text-align: start;
             }

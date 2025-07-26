@@ -1,7 +1,7 @@
 <template>
     <section class="how-to-body">
-        <div class="h3-subtitle-box">
-            <h3>How It Works</h3>
+        <div class="h2-subtitle-box">
+            <h2>How It Works</h2>
             <p>Get comprehensive website analysis in three simple steps</p>
         </div>
         <div class="steps-wrapper">
@@ -10,7 +10,7 @@
                     <div class="step-circle" aria-hidden="true">
                         {{ item.id }}
                     </div>
-                    <h6>{{ item.title }}</h6>
+                    <h3>{{ item.title }}</h3>
                     <p>{{ item.subtitle }}</p>
                 </div>
                 <img v-if="index !== howToList.length - 1" src="../assets/icons/arrow_black.svg"
@@ -26,7 +26,7 @@ import howToList from '../data/HowTo';
 
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "../styles/_mixins.scss" as mixins;
 
 .how-to-body {
@@ -41,7 +41,7 @@ import howToList from '../data/HowTo';
     box-sizing: border-box;
 }
 
-.h3-subtitle-box {
+.h2-subtitle-box {
     @include mixins.dflex-centered;
     flex-direction: column;
     gap: 16px;
@@ -49,7 +49,7 @@ import howToList from '../data/HowTo';
     width: 100%;
     margin: 0 auto;
 
-    h3 {
+    h2 {
         @include mixins.header03;
     }
 
@@ -93,7 +93,7 @@ import howToList from '../data/HowTo';
         box-sizing: border-box;
         height: 212px;
 
-        h6 {
+        h3 {
             @include mixins.header06;
         }
 

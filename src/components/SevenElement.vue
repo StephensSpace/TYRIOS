@@ -1,13 +1,13 @@
 <template>
     <div class="seven-elements-body">
         <div class="elements-header-box">
-            <h3>The 7-Element Messaging Framework</h3>
+            <h2>The 7-Element Messaging Framework</h2>
             <p>We analyze your website against these proven elements that make messaging clear, compelling, and conversion-focused</p>
         </div>
         <div class="seven-elements-wrapper">
             <div class="elements-box" v-for="item in sevenElements" :key="item.id">
                 <img :src="item.imgUrl" :alt="item.alt" />
-                <h6>{{ item.title }}</h6>
+                <h3>{{ item.title }}</h3>
                 <p>{{ item.subtitle }}</p>
 
             </div>
@@ -42,7 +42,7 @@ import sevenElements from '../data/SevenElementsList';
         width: 100%;
         margin: 0 auto;
 
-        h3 {
+        h2 {
             @include mixins.header03;
         }
 
@@ -76,7 +76,7 @@ import sevenElements from '../data/SevenElementsList';
         margin: 0 auto;
         box-sizing: border-box;
 
-        h6 {
+        h3 {
             @include mixins.header06;
         }
 
