@@ -2,9 +2,9 @@
     <section class="result-card-wrapper">
         <div class="result-card-header">
             <div class="header-rating">
-                <h5>
+                <h3>
                     {{ resultData.name }}
-                </h5>
+                </h3>
                 <div class="rating">
                     <div class="rating-number">
                         <p class="value" :style="{ color: color }">{{ value }}</p>
@@ -22,7 +22,7 @@
         <div class="result-card-box">
             <div class="undersection-header">
                 <img src="../../assets/icons/bid_landscape.png" alt="Landscape Icon">
-                <h6>Analysis</h6>
+                <h4>Analysis</h4>
             </div>
             <p>{{ resultData.analysis }}</p>
         </div>
@@ -30,7 +30,7 @@
         <div class="result-card-box">
             <div class="undersection-header">
                 <img src="../../assets/icons/table_eye.png" alt="Landscape Icon">
-                <h6>Current Impression</h6>
+                <h4>Current Impression</h4>
             </div>
             <p>{{ resultData.currentImpression }}</p>
         </div>
@@ -38,7 +38,7 @@
         <div class="result-card-box">
             <div class="undersection-header">
                 <img src="../../assets/icons/thumb_up.png" alt="Table Eye Icon">
-                <h6>Recomandations</h6>
+                <h4>Recomandations</h4>
             </div>
             <template v-for="(item, index) in resultData.recommendations" :key="index">
                 <div class="recomandation-items">
@@ -51,7 +51,7 @@
         <div class="result-card-box" v-if="resultData.suggestedImprovements">
             <div class="undersection-header">
                 <img src="../../assets/icons/chat.png" alt="Thumb Up Icon">
-                <h6>Suggested Copy Improvements</h6>
+                <h4>Suggested Copy Improvements</h4>
             </div>
             <template v-for="(item, index) in resultData.suggestedImprovements" :key="index">
                 <div class="improvment-items">
@@ -132,7 +132,7 @@ const ratingWord =
                 height: 24px;
             }
 
-            h6 {
+            h4 {
                 @include mixins.header06;
                 text-align: start;
             }
@@ -156,7 +156,7 @@ const ratingWord =
         gap: 8px
     }
 
-    h5 {
+    h3 {
         @include mixins.header05;
     }
 

@@ -1,6 +1,6 @@
 <template>
     <section class="summary-wrapper">
-        <h5>Executive Summary</h5>
+        <h3>Executive Summary</h3>
         <p>{{ summaryText.executiveSummary }}</p>
         <div class="score-rows">
             <!-- v-for direkt über scoreOverview -->
@@ -28,7 +28,7 @@ const props = defineProps<{
 .summary-wrapper {
     @include mixins.result-card;
 
-    h5 {
+    h3 {
         @include mixins.header05;
     }
 

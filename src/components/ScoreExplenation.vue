@@ -1,6 +1,6 @@
 <template>
     <section class="explain-wrapper">
-        <h5>How Our Scoring System Works?</h5>
+        <h2>How Our Scoring System Works?</h2>
         <p>Our scoring system rates each key area
             of your website on a scale from 1 to 10,
             making it easy to understand where you stand
@@ -62,7 +62,7 @@
     flex-direction: column;
     gap: 24px;
 
-    h5 {
+    h2 {
         @include mixins.header05;
         text-align: start;
     }

@@ -5,9 +5,9 @@
                 <p>
                     Overall Result
                 </p>
-                <h4>
+                <h1>
                     Analysis Complete
-                </h4>
+                </h1>
             </div>
             <div class="header-btn-box">
                 <button class="pro-support-btn" @click="emit('open-overlay', 'support')">
@@ -49,8 +49,8 @@
                     </div>
                 </div>
                 <ProgressCircle :show-value="scoreData.progressCircle.showValue" :size="scoreData.progressCircle.size"
-                    :value="scoreData.progressCircle.value" />
-
+                    :value="scoreData.progressCircle.value" />1
+1
             </div>
         </div>
 
@@ -118,7 +118,7 @@ const emit = defineEmits<{
                 color: var(--tyrios-dark-grey);
             }
 
-            h4 {
+            h1 {
                 @include mixins.header04;
             }
 

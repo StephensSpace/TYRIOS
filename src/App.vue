@@ -6,5 +6,5 @@ import LoadingScreen from './components/LoadingScreen.vue';
 </script>
 
 <template>
-  <LandingPageStrategic />
+  <ResultPage />
 </template>

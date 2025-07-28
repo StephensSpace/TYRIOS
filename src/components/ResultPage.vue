@@ -33,7 +33,7 @@ watch(showOverlay, (visible) => {
             <OverallResults :scoreData="resultConfigs.score" @open-overlay="showOverlay = true" />
             <ScoreExplenation />
             <div class="dividing-border"></div>
-            <h6>Analysis Report</h6>
+            <h2>Analysis Report</h2>
             <ResultSummary :summaryText="resultConfigs.score" :scoreOverview="resultConfigs.sections" />
             <ResultSectionCard v-for="(section, index) in resultConfigs.sections" :key="index" :resultData="section" />
         </main>
@@ -78,10 +78,6 @@ footer {
 
 }
 
-.header-hero-box {
-    width: 100%;
-}
-
 main {
     @include mixins.dflex-centered;
     flex-direction: column;
@@ -90,7 +86,7 @@ main {
     gap: 32px;
 }
 
-h6 {
+h2 {
     @include mixins.header06;
     text-align: start;
 }
