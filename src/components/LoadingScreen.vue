@@ -13,9 +13,9 @@ import Footer from "./shared/Footer.vue";
         <main>
             <div class="loading-wrapper">
                 <div class="header-subtitle">
-                    <h5>
+                    <h1>
                         We’re working on your analysis…
-                    </h5>
+                    </h1>
                     <p>
                         Your website report is progressing through our analysis stages.
                     </p>
@@ -35,33 +35,33 @@ import Footer from "./shared/Footer.vue";
                         <div class="circle-filled">
                             1
                         </div>
-                        <h6>
+                        <h2>
                             Queued
-                        </h6>
+                        </h2>
                     </div>
                     <div class="step-box">
                         <div class="circle-empty">
                             2
                         </div>
-                        <h6>
+                        <h2>
                             Processing
-                        </h6>
+                        </h2>
                     </div>
                     <div class="step-box">
                         <div class="circle-empty">
                             3
                         </div>
-                        <h6>
+                        <h2>
                             Finalizing
-                        </h6>
+                        </h2>
                     </div>
                     <div class="step-box">
                         <div class="circle-empty">
                             4
                         </div>
-                        <h6>
+                        <h2>
                             Completed
-                        </h6>
+                        </h2>
                     </div>
                 </div>
                 <p>No need to wait—We will notify you via email whenever
@@ -120,7 +120,7 @@ main {
             max-width: 202px;
             width: 100%;
 
-            h6 {
+            h2 {
                 @include mixins.header06;
             }
 
@@ -188,7 +188,7 @@ main {
             flex-direction: column;
             gap: 8px;
 
-            h5 {
+            h1 {
                 @include mixins.header05;
                 text-align: center;
                 font-weight: 600;
